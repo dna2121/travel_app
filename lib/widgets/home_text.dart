@@ -16,7 +16,7 @@ class HomeText extends StatelessWidget {
       text,
       style: GoogleFonts.poppins(
         color: Colors.black,
-        fontSize: 50,
+        fontSize: 35,
         fontWeight: weight,
         shadows: [
           Shadow(
