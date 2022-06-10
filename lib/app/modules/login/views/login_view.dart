@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:travel_app/app/routes/app_pages.dart';
 
 import '../../../../widgets/elv_button.dart';
 import '../../../../widgets/home_text.dart';
@@ -18,6 +19,7 @@ class LoginView extends GetView<LoginController> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 40),
               child: Container(
+                width: double.infinity,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -34,6 +36,10 @@ class LoginView extends GetView<LoginController> {
                 ),
               ),
             ),
+            Image.asset(
+              "images/cover.png",
+              height: 350,
+            ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 25),
               child: Column(
@@ -42,14 +48,16 @@ class LoginView extends GetView<LoginController> {
                     text: "Sign In",
                     color: Colors.deepPurple,
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 10),
                   ElvButton(
                     text: "Create an account",
                     color: Color.fromARGB(255, 162, 120, 234),
                   ),
-                  SizedBox(height: 25),
+                  SizedBox(height: 15),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.toNamed(Routes.HOME);
+                    },
                     child: Text(
                       "Skip",
                       style: GoogleFonts.poppins(
