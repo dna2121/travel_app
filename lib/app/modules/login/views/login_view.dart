@@ -5,10 +5,12 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:travel_app/app/routes/app_pages.dart';
 
 import '../../../../widgets/elv_button.dart';
-import '../../../../widgets/home_text.dart';
+import '../../../../widgets/welcome_text.dart';
 import '../controllers/login_controller.dart';
 
 class LoginView extends GetView<LoginController> {
+  const LoginView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -18,16 +20,18 @@ class LoginView extends GetView<LoginController> {
           children: [
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 40),
-              child: Container(
+              child: SizedBox(
                 width: double.infinity,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    HomeText(
+                    WelcomeText(
+                        fontsize: 35,
                         blur: 70,
                         text: "Let's enjoy the",
                         weight: FontWeight.w300),
-                    HomeText(
+                    WelcomeText(
+                      fontsize: 35,
                       text: "Beautiful World",
                       blur: 120.0,
                       weight: FontWeight.w700,
@@ -48,15 +52,15 @@ class LoginView extends GetView<LoginController> {
                     text: "Sign In",
                     color: Colors.deepPurple,
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   ElvButton(
                     text: "Create an account",
-                    color: Color.fromARGB(255, 162, 120, 234),
+                    color: const Color.fromARGB(255, 162, 120, 234),
                   ),
-                  SizedBox(height: 15),
+                  const SizedBox(height: 15),
                   TextButton(
                     onPressed: () {
-                      Get.toNamed(Routes.HOME);
+                      Get.offAllNamed(Routes.HOME);
                     },
                     child: Text(
                       "Skip",
